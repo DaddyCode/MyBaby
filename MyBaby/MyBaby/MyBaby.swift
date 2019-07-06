@@ -53,7 +53,6 @@ public class MyBaby {
         }
     }
     
-    //MARK: - AlertForTextField
     public static func AlertForTextFieldAppear(Message : String,TextField : UITextField){
         TextField.clipsToBounds = false
         TextField.clipsToBounds = false
@@ -99,7 +98,7 @@ public class MyBaby {
     public static func ApiHitUsingPostMethod( APiUrl: NSString,HeaderParameter : [String: String] , BodyParameter: NSDictionary,ApiName : String,Log : Bool,Controller : UIViewController) {
         
         let Delegate : MyBabyApiResponceDelegate? = Controller as? MyBabyApiResponceDelegate
-        var url = APiUrl
+        let url = APiUrl
         url = url.replacingOccurrences(of: " ", with: "%20") as NSString
         URLCache.shared.removeAllCachedResponses()
         
@@ -146,7 +145,71 @@ public class MyBaby {
             }
         }
     }
+    
+    
+    public static func ApiHitUsingGetMethod( APiUrl: NSString,HeaderParameter : [String: String] , BodyParameter: NSDictionary,ApiName : String,Log : Bool,Controller : UIViewController) {
+        
+        let Delegate : MyBabyApiResponceDelegate? = Controller as? MyBabyApiResponceDelegate
+        let url = APiUrl
+        url = url.replacingOccurrences(of: " ", with: "%20") as NSString
+        URLCache.shared.removeAllCachedResponses()
+        
+        //Create a non-caching configuration.
+        let config = URLSessionConfiguration.default
+        config.requestCachePolicy = .reloadIgnoringLocalAndRemoteCacheData
+        config.urlCache = nil
+        
+        Alamofire.request(url as String , method: .post, parameters: BodyParameter as? Parameters,headers:HeaderParameter).responseJSON { response in
+            
+            if Log == true{
+                print("API NAME :-  \(ApiName)")
+                print("API URL :-  \(APiUrl)")
+                print("API HeaderParameter :-  \(HeaderParameter)")
+                print("API BodyParameter :-  \(BodyParameter)")
+                print("API Result :-  \(response)")
+            }
+            
+            if let JSON = response.result.value {
+                let sessionExpireJson = JSON as! NSDictionary
+                if(sessionExpireJson.allKeys.count == 1){
+                    //That's mean api result is not proper
+                    let JSON = ["message":"Due to some reason error occur please try again","ApiName":ApiName]
+                    Delegate?.ApiResponceFailure(Failure: JSON as NSDictionary)
+                }
+                else{
+                    if sessionExpireJson["status"] as! String == "0"{
+                        //Api Failure
+                        let GetAllApiData : NSMutableDictionary = NSMutableDictionary.init(dictionary: sessionExpireJson)
+                        GetAllApiData.setValue(ApiName, forKey: "ApiName")
+                        Delegate?.ApiResponceFailure(Failure: GetAllApiData)
+                    }
+                    else{
+                        let GetAllApiData : NSMutableDictionary = NSMutableDictionary.init(dictionary: sessionExpireJson)
+                        GetAllApiData.setValue(ApiName, forKey: "ApiName")
+                        Delegate?.ApiResponceSuccess(Success: GetAllApiData)
+                    }
+                    
+                }
+            }
+            else{
+                let JSON = ["message":"Due to some reason error occur please try again","ApiName":ApiName,"status":"001"]
+                Delegate?.ApiResponceFailure(Failure: JSON as NSDictionary)
+            }
+        }
+    }
 
+    
+    //MARK: - TextfiledAnimation
+    func TextFieldPlaceHolderColorChange(textField : UITextField,color : UIColor)  {
+        textField.attributedPlaceholder = NSAttributedString(string: textField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor : color])
+        
+    }
+    func TextFieldIsValidEmail(testStr:String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: testStr)
+    }
+    
     
 }
 
