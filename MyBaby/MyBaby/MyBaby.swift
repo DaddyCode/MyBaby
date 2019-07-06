@@ -1,0 +1,106 @@
+//
+//  MyBaby.swift
+//  MyBaby
+//
+//  Created by Pawan Kumar on 06/07/19.
+//  Copyright © 2019 Pawan Kumar. All rights reserved.
+//
+
+import Foundation
+
+
+
+public class MyBaby{
+    private init(){}
+    
+    
+    //MARK: - Alert Appear
+    public static func AlertAppear(Messaage : String, Title : String, View : UIViewController,Button : Bool,SingleButton : Bool,FirstButtonText : String,SecondButtonText : String){
+        
+        if Button == false{
+            //Simple pop up no button have
+            let alert = UIAlertController(title: Title, message: Messaage, preferredStyle: .alert)
+            View.present(alert, animated: true, completion: nil)
+            let when = DispatchTime.now() + 2.5
+            DispatchQueue.main.asyncAfter(deadline: when)
+            {
+                alert.dismiss(animated: true, completion: nil)
+            }
+        }
+        else if SingleButton == true{
+            //inly single button appear here
+            let alert = UIAlertController.init(title: Title, message: Messaage, preferredStyle: .alert)
+            let Ok = UIAlertAction.init(title: FirstButtonText, style: .default) { (sender) in
+                alert.dismiss(animated: true, completion: nil)
+            }
+            alert.addAction(Ok)
+            View.present(alert, animated: true, completion: nil)
+            
+        }
+        else {
+            
+            let alert = UIAlertController.init(title: Title, message: Messaage, preferredStyle: .alert)
+            let Ok = UIAlertAction.init(title: FirstButtonText, style: .default) { (sender) in
+                alert.dismiss(animated: true, completion: nil)
+            }
+            alert.addAction(Ok)
+            let CANCEL = UIAlertAction.init(title: SecondButtonText, style: .default) { (sender) in
+                alert.dismiss(animated: true, completion: nil)
+            }
+            alert.addAction(CANCEL)
+            View.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    //MARK: - AlertForTextField
+    public static func AlertForTextFieldAppear(Message : String,TextField : UITextField){
+        TextField.clipsToBounds = false
+        TextField.clipsToBounds = false
+        let label = UILabel(frame: CGRect(x: 0, y: TextField.layer.frame.height + 2, width: TextField.frame.width, height: 21))
+        label.textAlignment = .left
+        label.textColor = UIColor.red
+        label.text = Message
+        label.font = label.font.withSize(14)
+        label.numberOfLines = 0
+        label.adjustsFontSizeToFitWidth = true
+        TextField.addSubview(label)
+        
+        ShakeAnimationForAnyView(viewSend: TextField)
+        TextField.textColor = UIColor.red
+        TextField.attributedPlaceholder = NSAttributedString(string: TextField.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor : UIColor.red])
+        
+        let when = DispatchTime.now() + 2
+        DispatchQueue.main.asyncAfter(deadline: when)
+        {
+            TextField.textColor = UIColor.black
+            TextField.attributedPlaceholder = NSAttributedString(string: TextField.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray])
+            label.isHidden = true
+        }
+        
+    }
+    
+    //MARK: - shakeAnimationForAnyView
+    public static func ShakeAnimationForAnyView(viewSend : UIView) {
+        
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.08
+        animation.repeatCount = 3
+        animation.autoreverses = true
+        animation.fromValue = NSValue(cgPoint: CGPoint(x: viewSend.center.x - 6, y: viewSend.center.y))
+        animation.toValue = NSValue(cgPoint: CGPoint(x: viewSend.center.x + 6, y: viewSend.center.y))
+        viewSend.layer.add(animation, forKey: "position")
+        
+    }
+    
+    
+    
+
+    
+}
+
+
+
+
+
+
+
