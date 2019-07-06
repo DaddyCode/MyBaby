@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		D4A7554822D14DF3005B009E /* MyBaby.h in Headers */ = {isa = PBXBuildFile; fileRef = D4A7554622D14DF3005B009E /* MyBaby.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D4A7554F22D14E05005B009E /* MyBaby.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A7554E22D14E05005B009E /* MyBaby.swift */; };
-		D4A7555122D14E0C005B009E /* ApiCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A7555022D14E0C005B009E /* ApiCall.swift */; };
+		D4A7555122D14E0C005B009E /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A7555022D14E0C005B009E /* Protocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,7 +17,7 @@
 		D4A7554622D14DF3005B009E /* MyBaby.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyBaby.h; sourceTree = "<group>"; };
 		D4A7554722D14DF3005B009E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4A7554E22D14E05005B009E /* MyBaby.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBaby.swift; sourceTree = "<group>"; };
-		D4A7555022D14E0C005B009E /* ApiCall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiCall.swift; sourceTree = "<group>"; };
+		D4A7555022D14E0C005B009E /* Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +50,7 @@
 		D4A7554522D14DF3005B009E /* MyBaby */ = {
 			isa = PBXGroup;
 			children = (
-				D4A7555022D14E0C005B009E /* ApiCall.swift */,
+				D4A7555022D14E0C005B009E /* Protocol.swift */,
 				D4A7554E22D14E05005B009E /* MyBaby.swift */,
 				D4A7554622D14DF3005B009E /* MyBaby.h */,
 				D4A7554722D14DF3005B009E /* Info.plist */,
@@ -137,7 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4A7555122D14E0C005B009E /* ApiCall.swift in Sources */,
+				D4A7555122D14E0C005B009E /* Protocol.swift in Sources */,
 				D4A7554F22D14E05005B009E /* MyBaby.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
