@@ -33,7 +33,6 @@ public class CodeHandlerApi{
         config.requestCachePolicy = .reloadIgnoringLocalAndRemoteCacheData
         config.urlCache = nil
 
-        print(APiUrl)
         
         Alamofire.request(url as String , method: .post, parameters: BodyParameter as? Parameters,headers:HeaderParameter).responseJSON { response in
 
@@ -44,7 +43,13 @@ public class CodeHandlerApi{
                 print("API BodyParameter :-  \(BodyParameter)")
                 print("API Result :-  \(response)")
             }
-
+            
+            let InternetCheck = NetworkReachabilityManager()!.isReachable
+            if InternetCheck == false{
+                let JSON = ["message":"Please check internet connection.","ApiName":ApiName,"status":"001"]
+                Delegate?.ApiResponceFailure(Failure: JSON as NSDictionary)
+            }
+            else{
             if let JSON = response.result.value {
                 let sessionExpireJson = JSON as! NSDictionary
                 if(sessionExpireJson.allKeys.count == 1){
@@ -71,6 +76,7 @@ public class CodeHandlerApi{
                 let JSON = ["message":"Due to some reason error occur please try again","ApiName":ApiName,"status":"001"]
                 Delegate?.ApiResponceFailure(Failure: JSON as NSDictionary)
             }
+          }
         }
     }
     
@@ -98,6 +104,13 @@ public class CodeHandlerApi{
                 print("API Result :-  \(response)")
             }
 
+            let InternetCheck = NetworkReachabilityManager()!.isReachable
+            if InternetCheck == false{
+                let JSON = ["message":"Please check internet connection.","ApiName":ApiName,"status":"001"]
+                Delegate?.ApiResponceFailure(Failure: JSON as NSDictionary)
+            }
+            else{
+            
             if let JSON = response.result.value {
                 let sessionExpireJson = JSON as! NSDictionary
                 if(sessionExpireJson.allKeys.count == 1){
@@ -124,6 +137,7 @@ public class CodeHandlerApi{
                 let JSON = ["message":"Due to some reason error occur please try again","ApiName":ApiName,"status":"001"]
                 Delegate?.ApiResponceFailure(Failure: JSON as NSDictionary)
             }
+          }
         }
     }
     
