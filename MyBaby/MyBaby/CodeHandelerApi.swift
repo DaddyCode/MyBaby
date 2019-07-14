@@ -23,7 +23,7 @@ public class CodeHandlerApi{
 //    //MARK: - APiHit
     public func ApiHitUsingPostMethod( APiUrl: NSString,HeaderParameter : [String: String] , BodyParameter: NSDictionary,ApiName : String,Log : Bool,Controller : UIViewController) {
 
-        let Delegate : MyBabyApiResponceDelegate? = Controller as? MyBabyApiResponceDelegate
+        let Delegate : ApiResponceDelegateMB? = Controller as? ApiResponceDelegateMB
         var url = APiUrl
         url = url.replacingOccurrences(of: " ", with: "%20") as NSString
         URLCache.shared.removeAllCachedResponses()
@@ -84,7 +84,7 @@ public class CodeHandlerApi{
     
     public func ApiHitUsingGetMethod( APiUrl: NSString,HeaderParameter : [String: String] , BodyParameter: NSDictionary,ApiName : String,Log : Bool,Controller : UIViewController) {
 
-        let Delegate : MyBabyApiResponceDelegate? = Controller as? MyBabyApiResponceDelegate
+        let Delegate : ApiResponceDelegateMB? = Controller as? ApiResponceDelegateMB
         var url = APiUrl
         url = url.replacingOccurrences(of: " ", with: "%20") as NSString
         URLCache.shared.removeAllCachedResponses()

@@ -12,7 +12,6 @@ import Foundation
 public class MyBaby {
     private init(){}
 
-
     public static let ApiCall      =    CodeHandlerApi()
     public static let Alert        =    CodeHandlerAlert()
     public static let Animation    =    CodeHandlerAnimation()
@@ -20,7 +19,8 @@ public class MyBaby {
     public static let Location     =    CodeHandlerLocation()
     public static let DateTime     =    CodeHandlerDateTime()
     public static let Loader       =    CodeHandlerLoader()
-    
+
+
 
 
 }

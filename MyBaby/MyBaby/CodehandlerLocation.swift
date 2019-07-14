@@ -31,7 +31,9 @@ public class CodeHandlerLocation : NSObject,CLLocationManagerDelegate{
             locationManager?.delegate = self
             locationManager?.desiredAccuracy = kCLLocationAccuracyBest
             locationManager?.startUpdatingLocation()
+  
         }
+      
     }
 
    public func StopLocationFetch(){
@@ -40,7 +42,7 @@ public class CodeHandlerLocation : NSObject,CLLocationManagerDelegate{
 
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation:CLLocation = locations[0]
-        let Delegate : MyBabyLocationDelegate? = ControllerGet as? MyBabyLocationDelegate
+        let Delegate : LocationDelegateMB? = ControllerGet as? LocationDelegateMB
         Delegate?.locationUpdateFetch(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
     }
 
