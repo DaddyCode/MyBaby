@@ -7,7 +7,7 @@ Pod::Spec.new do |spec|
   spec.name         = "MyBaby"
   spec.version      = "1.0.14"
   spec.summary      = "My custom Library"
-  spec.description  = "All In One Library"
+  spec.description  = "Hi my name is pawan kumar. This library under developement. but in future we add lot's of coll stuff in this framework"
   spec.homepage     = "https://github.com/DaddyCode/MyBaby"
   spec.license      = "MIT"
   spec.author             = { "Pawan kumar" => "Pk5340124@gmail.com" }
@@ -17,7 +17,7 @@ Pod::Spec.new do |spec|
   spec.source_files  = "MyBaby/**/*"
   spec.exclude_files = "MyBaby/MyBaby/*.plist"
   spec.ios.framework  = 'UIKit'
-  spec.ios.framework  = 'CoreLocation'
+#  spec.ios.framework  = 'CoreLocation'
   spec.dependency 'Alamofire'
 
 end
