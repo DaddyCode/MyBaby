@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 import CoreLocation
 
-public protocol MyBabyLocationDelegate {
+public protocol LocationDelegateMB {
     func locationUpdateFetch(latitude : Double,longitude : Double)
 }
 

@@ -14,6 +14,8 @@
 		D40FE12922DB268200B3F471 /* MyBaby.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE12322DB268100B3F471 /* MyBaby.swift */; };
 		D40FE12A22DB268200B3F471 /* CodeHandelerApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE12422DB268100B3F471 /* CodeHandelerApi.swift */; };
 		D40FE12B22DB268200B3F471 /* CodehandlerLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE12522DB268100B3F471 /* CodehandlerLocation.swift */; };
+		D46D191C22DB6A1000E1FCF8 /* CodeHandlerDateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46D191B22DB6A1000E1FCF8 /* CodeHandlerDateTime.swift */; };
+		D46D191E22DB6A1C00E1FCF8 /* CodeHandlerLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46D191D22DB6A1C00E1FCF8 /* CodeHandlerLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		D40FE12322DB268100B3F471 /* MyBaby.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBaby.swift; sourceTree = "<group>"; };
 		D40FE12422DB268100B3F471 /* CodeHandelerApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeHandelerApi.swift; sourceTree = "<group>"; };
 		D40FE12522DB268100B3F471 /* CodehandlerLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodehandlerLocation.swift; sourceTree = "<group>"; };
+		D46D191B22DB6A1000E1FCF8 /* CodeHandlerDateTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeHandlerDateTime.swift; sourceTree = "<group>"; };
+		D46D191D22DB6A1C00E1FCF8 /* CodeHandlerLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeHandlerLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +64,10 @@
 			children = (
 				D40FE12422DB268100B3F471 /* CodeHandelerApi.swift */,
 				D40FE12022DB268100B3F471 /* CodeHandlerAlert.swift */,
+				D46D191D22DB6A1C00E1FCF8 /* CodeHandlerLoader.swift */,
 				D40FE12222DB268100B3F471 /* CodeHandlerAnimation.swift */,
 				D40FE12522DB268100B3F471 /* CodehandlerLocation.swift */,
+				D46D191B22DB6A1000E1FCF8 /* CodeHandlerDateTime.swift */,
 				D40FE12122DB268100B3F471 /* CodeHandlerTextField.swift */,
 				D40FE12322DB268100B3F471 /* MyBaby.swift */,
 				D40FE11822DB22B700B3F471 /* MyBaby.h */,
@@ -151,6 +157,8 @@
 			files = (
 				D40FE12622DB268200B3F471 /* CodeHandlerAlert.swift in Sources */,
 				D40FE12822DB268200B3F471 /* CodeHandlerAnimation.swift in Sources */,
+				D46D191E22DB6A1C00E1FCF8 /* CodeHandlerLoader.swift in Sources */,
+				D46D191C22DB6A1000E1FCF8 /* CodeHandlerDateTime.swift in Sources */,
 				D40FE12A22DB268200B3F471 /* CodeHandelerApi.swift in Sources */,
 				D40FE12722DB268200B3F471 /* CodeHandlerTextField.swift in Sources */,
 				D40FE12B22DB268200B3F471 /* CodehandlerLocation.swift in Sources */,

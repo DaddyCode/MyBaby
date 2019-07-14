@@ -11,7 +11,7 @@ import Alamofire
 
 
 //MARK: - ApiDelegate
-public protocol MyBabyApiResponceDelegate {
+public protocol ApiResponceDelegateMB {
     func ApiResponceSuccess(Success : NSDictionary)
     func ApiResponceFailure(Failure : NSDictionary)
 }
