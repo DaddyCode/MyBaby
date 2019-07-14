@@ -8,12 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		D40FE11A22DB22B700B3F471 /* MyBaby.h in Headers */ = {isa = PBXBuildFile; fileRef = D40FE11822DB22B700B3F471 /* MyBaby.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D40FE12622DB268200B3F471 /* CodeHandlerAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE12022DB268100B3F471 /* CodeHandlerAlert.swift */; };
+		D40FE12722DB268200B3F471 /* CodeHandlerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE12122DB268100B3F471 /* CodeHandlerTextField.swift */; };
+		D40FE12822DB268200B3F471 /* CodeHandlerAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE12222DB268100B3F471 /* CodeHandlerAnimation.swift */; };
+		D40FE12922DB268200B3F471 /* MyBaby.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE12322DB268100B3F471 /* MyBaby.swift */; };
+		D40FE12A22DB268200B3F471 /* CodeHandelerApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE12422DB268100B3F471 /* CodeHandelerApi.swift */; };
+		D40FE12B22DB268200B3F471 /* CodehandlerLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FE12522DB268100B3F471 /* CodehandlerLocation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D40FE11522DB22B700B3F471 /* MyBaby.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MyBaby.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D40FE11822DB22B700B3F471 /* MyBaby.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyBaby.h; sourceTree = "<group>"; };
 		D40FE11922DB22B700B3F471 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D40FE12022DB268100B3F471 /* CodeHandlerAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeHandlerAlert.swift; sourceTree = "<group>"; };
+		D40FE12122DB268100B3F471 /* CodeHandlerTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeHandlerTextField.swift; sourceTree = "<group>"; };
+		D40FE12222DB268100B3F471 /* CodeHandlerAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeHandlerAnimation.swift; sourceTree = "<group>"; };
+		D40FE12322DB268100B3F471 /* MyBaby.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBaby.swift; sourceTree = "<group>"; };
+		D40FE12422DB268100B3F471 /* CodeHandelerApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeHandelerApi.swift; sourceTree = "<group>"; };
+		D40FE12522DB268100B3F471 /* CodehandlerLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodehandlerLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +58,12 @@
 		D40FE11722DB22B700B3F471 /* MyBaby */ = {
 			isa = PBXGroup;
 			children = (
+				D40FE12422DB268100B3F471 /* CodeHandelerApi.swift */,
+				D40FE12022DB268100B3F471 /* CodeHandlerAlert.swift */,
+				D40FE12222DB268100B3F471 /* CodeHandlerAnimation.swift */,
+				D40FE12522DB268100B3F471 /* CodehandlerLocation.swift */,
+				D40FE12122DB268100B3F471 /* CodeHandlerTextField.swift */,
+				D40FE12322DB268100B3F471 /* MyBaby.swift */,
 				D40FE11822DB22B700B3F471 /* MyBaby.h */,
 				D40FE11922DB22B700B3F471 /* Info.plist */,
 			);
@@ -95,6 +113,7 @@
 				TargetAttributes = {
 					D40FE11422DB22B700B3F471 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -130,6 +149,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D40FE12622DB268200B3F471 /* CodeHandlerAlert.swift in Sources */,
+				D40FE12822DB268200B3F471 /* CodeHandlerAnimation.swift in Sources */,
+				D40FE12A22DB268200B3F471 /* CodeHandelerApi.swift in Sources */,
+				D40FE12722DB268200B3F471 /* CodeHandlerTextField.swift in Sources */,
+				D40FE12B22DB268200B3F471 /* CodehandlerLocation.swift in Sources */,
+				D40FE12922DB268200B3F471 /* MyBaby.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +286,7 @@
 		D40FE11E22DB22B700B3F471 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -277,6 +303,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Pawan-Kumar.MyBaby";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -285,6 +312,7 @@
 		D40FE11F22DB22B700B3F471 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
