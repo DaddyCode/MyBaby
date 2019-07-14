@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D490316022DB0FD6008AEFD9 /* CodehandlerLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D490315F22DB0FD6008AEFD9 /* CodehandlerLocation.swift */; };
 		D4A7554822D14DF3005B009E /* MyBaby.h in Headers */ = {isa = PBXBuildFile; fileRef = D4A7554622D14DF3005B009E /* MyBaby.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D4A7554F22D14E05005B009E /* MyBaby.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A7554E22D14E05005B009E /* MyBaby.swift */; };
 		D4A7555122D14E0C005B009E /* CodeHandelerApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A7555022D14E0C005B009E /* CodeHandelerApi.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D490315F22DB0FD6008AEFD9 /* CodehandlerLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodehandlerLocation.swift; sourceTree = "<group>"; };
 		D4A7554322D14DF3005B009E /* MyBaby.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MyBaby.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4A7554622D14DF3005B009E /* MyBaby.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyBaby.h; sourceTree = "<group>"; };
 		D4A7554722D14DF3005B009E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				D4C6735F22D202E100C94449 /* CodeHandlerAlert.swift */,
+				D490315F22DB0FD6008AEFD9 /* CodehandlerLocation.swift */,
 				D4C6736122D202E100C94449 /* CodeHandlerAnimation.swift */,
 				D4C6736022D202E100C94449 /* CodeHandlerTextField.swift */,
 				D4A7555022D14E0C005B009E /* CodeHandelerApi.swift */,
@@ -150,6 +153,7 @@
 				D4A7554F22D14E05005B009E /* MyBaby.swift in Sources */,
 				D4C6736222D202E100C94449 /* CodeHandlerAlert.swift in Sources */,
 				D4C6736322D202E100C94449 /* CodeHandlerTextField.swift in Sources */,
+				D490316022DB0FD6008AEFD9 /* CodehandlerLocation.swift in Sources */,
 				D4C6736422D202E100C94449 /* CodeHandlerAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

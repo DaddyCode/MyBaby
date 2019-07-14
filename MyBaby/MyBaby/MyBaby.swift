@@ -16,6 +16,8 @@ public class MyBaby {
     public static let Alert        =    CodeHandlerAlert()
     public static let Animation    =    CodeHandlerAnimation()
     public static let TextField    =    CodeHandlerTextField()
+    public static let Location     =    CodeHandlerLocation()
+
 
 
 }
