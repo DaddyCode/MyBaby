@@ -11,7 +11,7 @@ import Foundation
 import CoreLocation
 
 public protocol MyBabyLocationDelegate {
-    func MyBabylocationUpdate(latitude : Double,longitude : Double)
+    func locationUpdateFetch(latitude : Double,longitude : Double)
 }
 
 public class CodeHandlerLocation : NSObject,CLLocationManagerDelegate{
@@ -40,7 +40,6 @@ public class CodeHandlerLocation : NSObject,CLLocationManagerDelegate{
    public func StopLocationFetch(){
         locationManager?.delegate = nil
     }
-    
 
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation:CLLocation = locations[0]
@@ -48,10 +47,6 @@ public class CodeHandlerLocation : NSObject,CLLocationManagerDelegate{
         Delegate?.MyBabylocationUpdate(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
 
     }
-
-
-
-
 
 }
 
