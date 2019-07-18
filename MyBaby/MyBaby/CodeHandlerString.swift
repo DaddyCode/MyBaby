@@ -28,11 +28,6 @@ public class CodeHandlerString{
 
     public func StringContailSingleEmoji(InputString : String) -> Bool{
         let ReturnString = InputString.isSingleEmoji
-  
-        let glyphCount = InputString.glyphCount
-        print("glyphCount ====== \(glyphCount)")
-
-
         return ReturnString
     }
     
