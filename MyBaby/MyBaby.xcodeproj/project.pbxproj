@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65AB08EC22E02D9100C274DB /* CodeHandlerString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AB08EB22E02D9100C274DB /* CodeHandlerString.swift */; };
 		D46D191822DB629A00E1FCF8 /* CodeHandlerDateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46D191722DB629A00E1FCF8 /* CodeHandlerDateTime.swift */; };
 		D46D191A22DB62BA00E1FCF8 /* CodeHandlerLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46D191922DB62BA00E1FCF8 /* CodeHandlerLoader.swift */; };
 		D494524422DA3E8F00579899 /* CodehandlerLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D494524322DA3E8F00579899 /* CodehandlerLocation.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		65AB08EB22E02D9100C274DB /* CodeHandlerString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeHandlerString.swift; sourceTree = "<group>"; };
 		D46D191722DB629A00E1FCF8 /* CodeHandlerDateTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeHandlerDateTime.swift; sourceTree = "<group>"; };
 		D46D191922DB62BA00E1FCF8 /* CodeHandlerLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeHandlerLoader.swift; sourceTree = "<group>"; };
 		D494524322DA3E8F00579899 /* CodehandlerLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodehandlerLocation.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				D4A7555022D14E0C005B009E /* CodeHandelerApi.swift */,
 				D46D191722DB629A00E1FCF8 /* CodeHandlerDateTime.swift */,
 				D46D191922DB62BA00E1FCF8 /* CodeHandlerLoader.swift */,
+				65AB08EB22E02D9100C274DB /* CodeHandlerString.swift */,
 				D4A7554E22D14E05005B009E /* MyBaby.swift */,
 				D4A7554622D14DF3005B009E /* MyBaby.h */,
 				D4A7554722D14DF3005B009E /* Info.plist */,
@@ -160,6 +163,7 @@
 				D46D191A22DB62BA00E1FCF8 /* CodeHandlerLoader.swift in Sources */,
 				D4A7554F22D14E05005B009E /* MyBaby.swift in Sources */,
 				D4C6736222D202E100C94449 /* CodeHandlerAlert.swift in Sources */,
+				65AB08EC22E02D9100C274DB /* CodeHandlerString.swift in Sources */,
 				D4C6736322D202E100C94449 /* CodeHandlerTextField.swift in Sources */,
 				D494524422DA3E8F00579899 /* CodehandlerLocation.swift in Sources */,
 				D4C6736422D202E100C94449 /* CodeHandlerAnimation.swift in Sources */,

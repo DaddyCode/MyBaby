@@ -19,6 +19,8 @@ public class MyBaby {
     public static let Location     =    CodeHandlerLocation()
     public static let DateTime     =    CodeHandlerDateTime()
     public static let Loader       =    CodeHandlerLoader()
+    public static let String       =    CodeHandlerString()
+
 
 
 
