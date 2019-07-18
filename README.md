@@ -22,20 +22,22 @@ Requirement : -
 Installation : -
 CocoaPods is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate Alamofire into your Xcode project using CocoaPods, specify it in your PodFile:
 
-pod 'MyBaby',  '~> 1.0.20'
+pod 'MyBaby',  '~> 1.0.21'
 
 How To Use : -
-Import MyBaby
-MyBaby.(Alert,Animation,API,textField,Data-Time,Loader,etc).(just select function you want to implement).
+1. Import MyBaby
+2. MyBaby.(Alert,Animation,API,textField,Data-Time,Loader,etc).(just select function you want to implement).
 
 for api responce call  : -  ApiResponceDelegateMB
 EXAMPLE : - 
-class ABC : UIViewController,ApiResponceDelegateMB{
+1. Import MyBaby
+2. class ABC : UIViewController,ApiResponceDelegateMB{
 // class function
 }
 
 For location response call : - LocationDelegateMB
 EXAMPLE : -
-class ABC : UIViewController,LocationDelegateMB{
+1. Import MyBaby
+2. class ABC : UIViewController,LocationDelegateMB{
 // class function
 }
