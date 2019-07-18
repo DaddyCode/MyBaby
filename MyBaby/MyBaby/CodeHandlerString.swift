@@ -54,6 +54,16 @@ public class CodeHandlerString{
         
     }
     
+    public func StringStartingWhiteSpaceRemove(InputString:String) ->String{
+        let trimmed = InputString.replacingOccurrences(of: "^\\s+|", with: "", options: .regularExpression)
+        return trimmed
+    }
+    
+    public func StringEndingWhiteSpaceRemove(InputString:String) ->String{
+        let trimmed = InputString.replacingOccurrences(of: "\\s+$", with: "", options: .regularExpression)
+        return trimmed
+    }
+    
    public func StringMultipleLineWhiteSpaceRemove(InputString:String) ->String{
         do{
             

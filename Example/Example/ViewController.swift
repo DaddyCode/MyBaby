@@ -23,11 +23,12 @@ class ViewController: UIViewController {
     }
 
     @IBAction func btnStringAction(_ sender: Any) {
-        
 
-        self.txtField.text = MyBaby.String.StringMultipleLineWhiteSpaceRemove(InputString: self.txtField.text!)
-        print(MyBaby.String.StringHaveCharacter(InputString: self.txtField.text!))
-        
+
+        self.txtField.text = MyBaby.String.StringEndingWhiteSpaceRemove(InputString: self.txtField.text!)
+        self.txtField.text = MyBaby.String.StringStartingWhiteSpaceRemove(InputString: self.txtField.text!)
+ 
+   
     }
     
 
