@@ -7,35 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		65AB08EC22E02D9100C274DB /* CodeHandlerString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AB08EB22E02D9100C274DB /* CodeHandlerString.swift */; };
-		D46D191822DB629A00E1FCF8 /* CodeHandlerDateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46D191722DB629A00E1FCF8 /* CodeHandlerDateTime.swift */; };
-		D46D191A22DB62BA00E1FCF8 /* CodeHandlerLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46D191922DB62BA00E1FCF8 /* CodeHandlerLoader.swift */; };
-		D494524422DA3E8F00579899 /* CodehandlerLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D494524322DA3E8F00579899 /* CodehandlerLocation.swift */; };
-		D4A7554822D14DF3005B009E /* MyBaby.h in Headers */ = {isa = PBXBuildFile; fileRef = D4A7554622D14DF3005B009E /* MyBaby.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D4A7554F22D14E05005B009E /* MyBaby.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A7554E22D14E05005B009E /* MyBaby.swift */; };
-		D4A7555122D14E0C005B009E /* CodeHandelerApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A7555022D14E0C005B009E /* CodeHandelerApi.swift */; };
-		D4C6736222D202E100C94449 /* CodeHandlerAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6735F22D202E100C94449 /* CodeHandlerAlert.swift */; };
-		D4C6736322D202E100C94449 /* CodeHandlerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6736022D202E100C94449 /* CodeHandlerTextField.swift */; };
-		D4C6736422D202E100C94449 /* CodeHandlerAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6736122D202E100C94449 /* CodeHandlerAnimation.swift */; };
+		65AB08FC22E0449500C274DB /* MyBaby.h in Headers */ = {isa = PBXBuildFile; fileRef = 65AB08FA22E0449500C274DB /* MyBaby.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65AB090A22E044BA00C274DB /* CodehandlerLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AB090222E044BA00C274DB /* CodehandlerLocation.swift */; };
+		65AB090B22E044BA00C274DB /* CodeHandelerApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AB090322E044BA00C274DB /* CodeHandelerApi.swift */; };
+		65AB090C22E044BA00C274DB /* CodeHandlerAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AB090422E044BA00C274DB /* CodeHandlerAnimation.swift */; };
+		65AB090D22E044BA00C274DB /* CodeHandlerLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AB090522E044BA00C274DB /* CodeHandlerLoader.swift */; };
+		65AB090E22E044BA00C274DB /* CodeHandlerAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AB090622E044BA00C274DB /* CodeHandlerAlert.swift */; };
+		65AB090F22E044BA00C274DB /* CodeHandlerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AB090722E044BA00C274DB /* CodeHandlerTextField.swift */; };
+		65AB091022E044BA00C274DB /* CodeHandlerString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AB090822E044BA00C274DB /* CodeHandlerString.swift */; };
+		65AB091122E044BA00C274DB /* CodeHandlerDateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AB090922E044BA00C274DB /* CodeHandlerDateTime.swift */; };
+		65AB091322E044C000C274DB /* MyBaby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AB091222E044C000C274DB /* MyBaby.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		65AB08EB22E02D9100C274DB /* CodeHandlerString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeHandlerString.swift; sourceTree = "<group>"; };
-		D46D191722DB629A00E1FCF8 /* CodeHandlerDateTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeHandlerDateTime.swift; sourceTree = "<group>"; };
-		D46D191922DB62BA00E1FCF8 /* CodeHandlerLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeHandlerLoader.swift; sourceTree = "<group>"; };
-		D494524322DA3E8F00579899 /* CodehandlerLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodehandlerLocation.swift; sourceTree = "<group>"; };
-		D4A7554322D14DF3005B009E /* MyBaby.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MyBaby.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D4A7554622D14DF3005B009E /* MyBaby.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyBaby.h; sourceTree = "<group>"; };
-		D4A7554722D14DF3005B009E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D4A7554E22D14E05005B009E /* MyBaby.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBaby.swift; sourceTree = "<group>"; };
-		D4A7555022D14E0C005B009E /* CodeHandelerApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeHandelerApi.swift; sourceTree = "<group>"; };
-		D4C6735F22D202E100C94449 /* CodeHandlerAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeHandlerAlert.swift; sourceTree = "<group>"; };
-		D4C6736022D202E100C94449 /* CodeHandlerTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeHandlerTextField.swift; sourceTree = "<group>"; };
-		D4C6736122D202E100C94449 /* CodeHandlerAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeHandlerAnimation.swift; sourceTree = "<group>"; };
+		65AB08F722E0449500C274DB /* MyBaby.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MyBaby.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		65AB08FA22E0449500C274DB /* MyBaby.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyBaby.h; sourceTree = "<group>"; };
+		65AB08FB22E0449500C274DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65AB090222E044BA00C274DB /* CodehandlerLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodehandlerLocation.swift; sourceTree = "<group>"; };
+		65AB090322E044BA00C274DB /* CodeHandelerApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeHandelerApi.swift; sourceTree = "<group>"; };
+		65AB090422E044BA00C274DB /* CodeHandlerAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeHandlerAnimation.swift; sourceTree = "<group>"; };
+		65AB090522E044BA00C274DB /* CodeHandlerLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeHandlerLoader.swift; sourceTree = "<group>"; };
+		65AB090622E044BA00C274DB /* CodeHandlerAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeHandlerAlert.swift; sourceTree = "<group>"; };
+		65AB090722E044BA00C274DB /* CodeHandlerTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeHandlerTextField.swift; sourceTree = "<group>"; };
+		65AB090822E044BA00C274DB /* CodeHandlerString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeHandlerString.swift; sourceTree = "<group>"; };
+		65AB090922E044BA00C274DB /* CodeHandlerDateTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeHandlerDateTime.swift; sourceTree = "<group>"; };
+		65AB091222E044C000C274DB /* MyBaby.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBaby.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D4A7554022D14DF3005B009E /* Frameworks */ = {
+		65AB08F422E0449500C274DB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -45,36 +45,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D4A7553922D14DF3005B009E = {
+		65AB08ED22E0449500C274DB = {
 			isa = PBXGroup;
 			children = (
-				D4A7554522D14DF3005B009E /* MyBaby */,
-				D4A7554422D14DF3005B009E /* Products */,
+				65AB08F922E0449500C274DB /* MyBaby */,
+				65AB08F822E0449500C274DB /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		D4A7554422D14DF3005B009E /* Products */ = {
+		65AB08F822E0449500C274DB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D4A7554322D14DF3005B009E /* MyBaby.framework */,
+				65AB08F722E0449500C274DB /* MyBaby.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D4A7554522D14DF3005B009E /* MyBaby */ = {
+		65AB08F922E0449500C274DB /* MyBaby */ = {
 			isa = PBXGroup;
 			children = (
-				D494524322DA3E8F00579899 /* CodehandlerLocation.swift */,
-				D4C6735F22D202E100C94449 /* CodeHandlerAlert.swift */,
-				D4C6736122D202E100C94449 /* CodeHandlerAnimation.swift */,
-				D4C6736022D202E100C94449 /* CodeHandlerTextField.swift */,
-				D4A7555022D14E0C005B009E /* CodeHandelerApi.swift */,
-				D46D191722DB629A00E1FCF8 /* CodeHandlerDateTime.swift */,
-				D46D191922DB62BA00E1FCF8 /* CodeHandlerLoader.swift */,
-				65AB08EB22E02D9100C274DB /* CodeHandlerString.swift */,
-				D4A7554E22D14E05005B009E /* MyBaby.swift */,
-				D4A7554622D14DF3005B009E /* MyBaby.h */,
-				D4A7554722D14DF3005B009E /* Info.plist */,
+				65AB090322E044BA00C274DB /* CodeHandelerApi.swift */,
+				65AB090622E044BA00C274DB /* CodeHandlerAlert.swift */,
+				65AB090422E044BA00C274DB /* CodeHandlerAnimation.swift */,
+				65AB090922E044BA00C274DB /* CodeHandlerDateTime.swift */,
+				65AB090522E044BA00C274DB /* CodeHandlerLoader.swift */,
+				65AB090222E044BA00C274DB /* CodehandlerLocation.swift */,
+				65AB090822E044BA00C274DB /* CodeHandlerString.swift */,
+				65AB090722E044BA00C274DB /* CodeHandlerTextField.swift */,
+				65AB091222E044C000C274DB /* MyBaby.swift */,
+				65AB08FA22E0449500C274DB /* MyBaby.h */,
+				65AB08FB22E0449500C274DB /* Info.plist */,
 			);
 			path = MyBaby;
 			sourceTree = "<group>";
@@ -82,25 +82,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		D4A7553E22D14DF3005B009E /* Headers */ = {
+		65AB08F222E0449500C274DB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4A7554822D14DF3005B009E /* MyBaby.h in Headers */,
+				65AB08FC22E0449500C274DB /* MyBaby.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		D4A7554222D14DF3005B009E /* MyBaby */ = {
+		65AB08F622E0449500C274DB /* MyBaby */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D4A7554B22D14DF3005B009E /* Build configuration list for PBXNativeTarget "MyBaby" */;
+			buildConfigurationList = 65AB08FF22E0449500C274DB /* Build configuration list for PBXNativeTarget "MyBaby" */;
 			buildPhases = (
-				D4A7553E22D14DF3005B009E /* Headers */,
-				D4A7553F22D14DF3005B009E /* Sources */,
-				D4A7554022D14DF3005B009E /* Frameworks */,
-				D4A7554122D14DF3005B009E /* Resources */,
+				65AB08F222E0449500C274DB /* Headers */,
+				65AB08F322E0449500C274DB /* Sources */,
+				65AB08F422E0449500C274DB /* Frameworks */,
+				65AB08F522E0449500C274DB /* Resources */,
 			);
 			buildRules = (
 			);
@@ -108,43 +108,43 @@
 			);
 			name = MyBaby;
 			productName = MyBaby;
-			productReference = D4A7554322D14DF3005B009E /* MyBaby.framework */;
+			productReference = 65AB08F722E0449500C274DB /* MyBaby.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D4A7553A22D14DF3005B009E /* Project object */ = {
+		65AB08EE22E0449500C274DB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1020;
-				ORGANIZATIONNAME = "Pawan Kumar";
+				ORGANIZATIONNAME = pawan;
 				TargetAttributes = {
-					D4A7554222D14DF3005B009E = {
+					65AB08F622E0449500C274DB = {
 						CreatedOnToolsVersion = 10.2.1;
 						LastSwiftMigration = 1020;
 					};
 				};
 			};
-			buildConfigurationList = D4A7553D22D14DF3005B009E /* Build configuration list for PBXProject "MyBaby" */;
+			buildConfigurationList = 65AB08F122E0449500C274DB /* Build configuration list for PBXProject "MyBaby" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = D4A7553922D14DF3005B009E;
-			productRefGroup = D4A7554422D14DF3005B009E /* Products */;
+			mainGroup = 65AB08ED22E0449500C274DB;
+			productRefGroup = 65AB08F822E0449500C274DB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D4A7554222D14DF3005B009E /* MyBaby */,
+				65AB08F622E0449500C274DB /* MyBaby */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D4A7554122D14DF3005B009E /* Resources */ = {
+		65AB08F522E0449500C274DB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -154,26 +154,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D4A7553F22D14DF3005B009E /* Sources */ = {
+		65AB08F322E0449500C274DB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4A7555122D14E0C005B009E /* CodeHandelerApi.swift in Sources */,
-				D46D191822DB629A00E1FCF8 /* CodeHandlerDateTime.swift in Sources */,
-				D46D191A22DB62BA00E1FCF8 /* CodeHandlerLoader.swift in Sources */,
-				D4A7554F22D14E05005B009E /* MyBaby.swift in Sources */,
-				D4C6736222D202E100C94449 /* CodeHandlerAlert.swift in Sources */,
-				65AB08EC22E02D9100C274DB /* CodeHandlerString.swift in Sources */,
-				D4C6736322D202E100C94449 /* CodeHandlerTextField.swift in Sources */,
-				D494524422DA3E8F00579899 /* CodehandlerLocation.swift in Sources */,
-				D4C6736422D202E100C94449 /* CodeHandlerAnimation.swift in Sources */,
+				65AB090B22E044BA00C274DB /* CodeHandelerApi.swift in Sources */,
+				65AB090F22E044BA00C274DB /* CodeHandlerTextField.swift in Sources */,
+				65AB091122E044BA00C274DB /* CodeHandlerDateTime.swift in Sources */,
+				65AB091322E044C000C274DB /* MyBaby.swift in Sources */,
+				65AB091022E044BA00C274DB /* CodeHandlerString.swift in Sources */,
+				65AB090C22E044BA00C274DB /* CodeHandlerAnimation.swift in Sources */,
+				65AB090D22E044BA00C274DB /* CodeHandlerLoader.swift in Sources */,
+				65AB090E22E044BA00C274DB /* CodeHandlerAlert.swift in Sources */,
+				65AB090A22E044BA00C274DB /* CodehandlerLocation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		D4A7554922D14DF3005B009E /* Debug */ = {
+		65AB08FD22E0449500C274DB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -237,7 +237,7 @@
 			};
 			name = Debug;
 		};
-		D4A7554A22D14DF3005B009E /* Release */ = {
+		65AB08FE22E0449500C274DB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -295,7 +295,7 @@
 			};
 			name = Release;
 		};
-		D4A7554C22D14DF3005B009E /* Debug */ = {
+		65AB090022E0449500C274DB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -312,7 +312,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Pawan-Kumar.MyBaby";
+				PRODUCT_BUNDLE_IDENTIFIER = pawan.MyBaby;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -321,7 +321,7 @@
 			};
 			name = Debug;
 		};
-		D4A7554D22D14DF3005B009E /* Release */ = {
+		65AB090122E0449500C274DB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -338,7 +338,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Pawan-Kumar.MyBaby";
+				PRODUCT_BUNDLE_IDENTIFIER = pawan.MyBaby;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -349,25 +349,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D4A7553D22D14DF3005B009E /* Build configuration list for PBXProject "MyBaby" */ = {
+		65AB08F122E0449500C274DB /* Build configuration list for PBXProject "MyBaby" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D4A7554922D14DF3005B009E /* Debug */,
-				D4A7554A22D14DF3005B009E /* Release */,
+				65AB08FD22E0449500C274DB /* Debug */,
+				65AB08FE22E0449500C274DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D4A7554B22D14DF3005B009E /* Build configuration list for PBXNativeTarget "MyBaby" */ = {
+		65AB08FF22E0449500C274DB /* Build configuration list for PBXNativeTarget "MyBaby" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D4A7554C22D14DF3005B009E /* Debug */,
-				D4A7554D22D14DF3005B009E /* Release */,
+				65AB090022E0449500C274DB /* Debug */,
+				65AB090122E0449500C274DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D4A7553A22D14DF3005B009E /* Project object */;
+	rootObject = 65AB08EE22E0449500C274DB /* Project object */;
 }
