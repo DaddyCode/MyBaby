@@ -54,11 +54,13 @@ public class CodeHandlerAlert{
     public func AlertForTextFieldAppear(Message : String,TextField : UITextField){
         TextField.clipsToBounds = false
         TextField.clipsToBounds = false
-        let label = UILabel(frame: CGRect(x: 0, y: TextField.layer.frame.height + 2, width: TextField.frame.width, height: 21))
+        let bounds = UIScreen.main.bounds
+        let width = bounds.size.width
+        let label = UILabel(frame: CGRect(x: 0, y: TextField.layer.frame.height + 2, width: width - 20, height: 21))
         label.textAlignment = .left
         label.textColor = UIColor.red
         label.text = Message
-        label.font = label.font.withSize(14)
+        label.font = label.font.withSize(16)
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
         TextField.addSubview(label)

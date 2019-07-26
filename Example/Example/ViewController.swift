@@ -11,6 +11,7 @@ import MyBaby
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var txtFieldError: UITextField!
     @IBOutlet weak var txtField: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +29,8 @@ class ViewController: UIViewController {
         self.txtField.text = MyBaby.String.StringEndingWhiteSpaceRemove(InputString: self.txtField.text!)
         self.txtField.text = MyBaby.String.StringStartingWhiteSpaceRemove(InputString: self.txtField.text!)
  
-   
+        MyBaby.Alert.AlertForTextFieldAppear(Message: "this si leanth testing error occur", TextField: self.txtFieldError)
+
     }
     
 
