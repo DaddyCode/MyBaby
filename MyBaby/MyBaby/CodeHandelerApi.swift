@@ -54,7 +54,7 @@ public class CodeHandlerApi{
                 let sessionExpireJson = JSON as! NSDictionary
                 if(sessionExpireJson.allKeys.count == 1){
                     //That's mean api result is not proper
-                    let JSON = ["message":"Due to some reason error occur please try again","ApiName":ApiName]
+                    let JSON = ["message":"Json Data Error","status":"003","ApiName":ApiName]
                     Delegate?.ApiResponceFailure(Failure: JSON as NSDictionary)
                 }
                 else{
@@ -73,7 +73,7 @@ public class CodeHandlerApi{
                 }
             }
             else{
-                let JSON = ["message":"Due to some reason error occur please try again","ApiName":ApiName,"status":"001"]
+                let JSON = ["message":"Due to some reason error occur please try again","ApiName":ApiName,"status":"002"]
                 Delegate?.ApiResponceFailure(Failure: JSON as NSDictionary)
             }
           }
@@ -115,7 +115,7 @@ public class CodeHandlerApi{
                 let sessionExpireJson = JSON as! NSDictionary
                 if(sessionExpireJson.allKeys.count == 1){
                     //That's mean api result is not proper
-                    let JSON = ["message":"Due to some reason error occur please try again","ApiName":ApiName]
+                    let JSON = ["message":"Json Data Error","status":"003","ApiName":ApiName]
                     Delegate?.ApiResponceFailure(Failure: JSON as NSDictionary)
                 }
                 else{
@@ -134,7 +134,7 @@ public class CodeHandlerApi{
                 }
             }
             else{
-                let JSON = ["message":"Due to some reason error occur please try again","ApiName":ApiName,"status":"001"]
+                let JSON = ["message":"Due to some reason error occur please try again","ApiName":ApiName,"status":"002"]
                 Delegate?.ApiResponceFailure(Failure: JSON as NSDictionary)
             }
           }
