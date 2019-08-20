@@ -18,18 +18,19 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
 
 
-        
-
+      
         
     }
 
     @IBAction func btnStringAction(_ sender: Any) {
 
+        MyBaby.MySqual.StartSqlite(DataBaseName: "PAWANDATABASE")
+        let TEmpDIct = ["First" : "Value","Second" : "nothing to say"] as! NSDictionary
+        MyBaby.MySqual.AddValueInSqlite(DataWantToSave: TEmpDIct, TableName: "FirstTable")
+        
 
-        self.txtField.text = MyBaby.String.StringEndingWhiteSpaceRemove(InputString: self.txtField.text!)
-        self.txtField.text = MyBaby.String.StringStartingWhiteSpaceRemove(InputString: self.txtField.text!)
- 
-        MyBaby.Alert.AlertForTextFieldAppear(Message: "this si leanth testing error occur", TextField: self.txtFieldError)
+     let Data =  MyBaby.MySqual.GetValueFromSqlite(TableName: "FirstTable")
+     print(Data)
 
     }
     

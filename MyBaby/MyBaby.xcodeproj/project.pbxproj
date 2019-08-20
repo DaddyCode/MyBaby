@@ -17,6 +17,7 @@
 		65AB091022E044BA00C274DB /* CodeHandlerString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AB090822E044BA00C274DB /* CodeHandlerString.swift */; };
 		65AB091122E044BA00C274DB /* CodeHandlerDateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AB090922E044BA00C274DB /* CodeHandlerDateTime.swift */; };
 		65AB091322E044C000C274DB /* MyBaby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AB091222E044C000C274DB /* MyBaby.swift */; };
+		65FAB0DD230C0C5C00DB3732 /* CodeHandelerMySqlite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FAB0DC230C0C5C00DB3732 /* CodeHandelerMySqlite.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		65AB090822E044BA00C274DB /* CodeHandlerString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeHandlerString.swift; sourceTree = "<group>"; };
 		65AB090922E044BA00C274DB /* CodeHandlerDateTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeHandlerDateTime.swift; sourceTree = "<group>"; };
 		65AB091222E044C000C274DB /* MyBaby.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBaby.swift; sourceTree = "<group>"; };
+		65FAB0DC230C0C5C00DB3732 /* CodeHandelerMySqlite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeHandelerMySqlite.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				65AB090222E044BA00C274DB /* CodehandlerLocation.swift */,
 				65AB090822E044BA00C274DB /* CodeHandlerString.swift */,
 				65AB090722E044BA00C274DB /* CodeHandlerTextField.swift */,
+				65FAB0DC230C0C5C00DB3732 /* CodeHandelerMySqlite.swift */,
 				65AB091222E044C000C274DB /* MyBaby.swift */,
 				65AB08FA22E0449500C274DB /* MyBaby.h */,
 				65AB08FB22E0449500C274DB /* Info.plist */,
@@ -161,6 +164,7 @@
 				65AB090B22E044BA00C274DB /* CodeHandelerApi.swift in Sources */,
 				65AB090F22E044BA00C274DB /* CodeHandlerTextField.swift in Sources */,
 				65AB091122E044BA00C274DB /* CodeHandlerDateTime.swift in Sources */,
+				65FAB0DD230C0C5C00DB3732 /* CodeHandelerMySqlite.swift in Sources */,
 				65AB091322E044C000C274DB /* MyBaby.swift in Sources */,
 				65AB091022E044BA00C274DB /* CodeHandlerString.swift in Sources */,
 				65AB090C22E044BA00C274DB /* CodeHandlerAnimation.swift in Sources */,

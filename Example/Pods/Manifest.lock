@@ -1,7 +1,11 @@
 PODS:
   - Alamofire (4.8.2)
-  - MyBaby (1.0.25):
+  - MyBaby (1.0.26):
     - Alamofire
+    - SQLite.swift
+  - SQLite.swift (0.12.2):
+    - SQLite.swift/standard (= 0.12.2)
+  - SQLite.swift/standard (0.12.2)
 
 DEPENDENCIES:
   - MyBaby (from `../MyBaby/`)
@@ -9,6 +13,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - SQLite.swift
 
 EXTERNAL SOURCES:
   MyBaby:
@@ -16,7 +21,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
-  MyBaby: a29fe9d34ea70614973af0f17b00f92afdde49d3
+  MyBaby: 418d0df48329d6699b524fff6fbfc2deebf1ce3c
+  SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
 
 PODFILE CHECKSUM: 50061508209d8c5f7f57e86787ff79dc0e1a84ac
 
