@@ -14,40 +14,86 @@ import SQLite
 public class CodeHandelerMySqlite{
 
     var Localdatabase: Connection!
-
-  public func StartSqlite(DataBaseName : String) -> String{
+    
+    
+    
+    public func SaveValueInSqlite(DataBaseName : String,TableName : String,DataWantToSave : NSDictionary) -> String{
         do {
             let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
             let fileUrl = documentDirectory.appendingPathComponent(DataBaseName).appendingPathExtension("sqlite3")
             Localdatabase = try Connection(fileUrl.path)
-            return "Success"
+            
+            let manager = FileManager.default
+            let strDBPath   : String    = fileUrl.path
+            if (manager.fileExists(atPath: strDBPath)) {
+                // it's here!!
+            let Status = self.NowRunAddOperation(DataWantToSave: DataWantToSave, TableName: TableName, DataBaseName: DataBaseName)
+                return Status
+            }else{
+                print("File Not Exist so try again")
+                return "Failure"
+            }
         } catch {
             print(error)
             return "Failure"
+
         }
+        
+        
     }
     
-   public func CreateTable(ColoumArray : NSArray,TableName : String) -> String{
-        
-        //Create Table if available already then get Value
-        let TableName = TableName
-        let usersTableForNow = Table(TableName)
-        let createTable = usersTableForNow.create { (table) in
-            for key in ColoumArray {
-                table.column(Expression<String>(key as! String))
-            }
-        }
+    public func DeleteTableInSqlite(DataBaseName : String,TableName : String) -> String {
         do {
-            try Localdatabase.run(createTable)
-            return "Table Create"
+            let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            let fileUrl = documentDirectory.appendingPathComponent(DataBaseName).appendingPathExtension("sqlite3")
+
+            
+            let manager = FileManager.default
+            let strDBPath   : String    = fileUrl.path
+            if (manager.fileExists(atPath: strDBPath)) {
+                // it's here!!
+                Localdatabase = try Connection(fileUrl.path)
+             let Status =  self.NowRunDeleteOperation(TableName: TableName)
+                return Status
+            }else{
+                print("File Not Exist so try again")
+                return "Failure"
+            }
         } catch {
-            return "Table Already Exist"
+            print(error)
+            return "Failure"
+
+        }
+        
+        
+    }
+    
+    public func GetValueFromSqlite( TableName : String,DataBaseName : String) -> NSArray{
+        do {
+            let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            let fileUrl = documentDirectory.appendingPathComponent(DataBaseName).appendingPathExtension("sqlite3")
+            
+            
+            let manager = FileManager.default
+            let strDBPath   : String    = fileUrl.path
+            if (manager.fileExists(atPath: strDBPath)) {
+                // it's here!!
+                Localdatabase = try Connection(fileUrl.path)
+                let TableArray = self.NowRunGetValueOperation(TableName: TableName)
+                return TableArray
+            }else{
+                print("File Not Exist so try again")
+                return []
+            }
+        } catch {
+            print(error)
+            return []
         }
         
     }
     
     
-   public func AddValueInSqlite(DataWantToSave : NSDictionary, TableName : String){
+    func NowRunAddOperation(DataWantToSave : NSDictionary, TableName : String,DataBaseName : String) -> String{
         
         let TableName : String = TableName
         
@@ -62,7 +108,7 @@ public class CodeHandelerMySqlite{
             if (DataWantToSave[KeyGot] as? String) != nil {
                 //value is a string
                 let ValueGot = DataWantToSave[KeyGot] as! String
-                Value = "10000" + String(ValueGot)
+                Value =  String(ValueGot)
             }
             else if (DataWantToSave[KeyGot] as? Date) != nil {
                 //Value is a Date
@@ -97,6 +143,8 @@ public class CodeHandelerMySqlite{
                 
                 let formatterTen = DateFormatter()
                 formatterTen.dateFormat = "HH:mm:ss.SSS"
+                
+
                 
                 if formatterFirst.string(from: ValueIsDate) != nil{
                     Value = "20000" + formatterFirst.string(from: ValueIsDate)
@@ -164,22 +212,40 @@ public class CodeHandelerMySqlite{
         KeyStringCreate = String(KeyStringCreate.dropLast()) + ")"
         ValueStringCcreate = String(ValueStringCcreate.dropLast()) + ");"
         let FinalQueryForINsert = "INSERT INTO " + TableName + " " + KeyStringCreate + " VALUES " + ValueStringCcreate
-        
         do {
             try Localdatabase.run(FinalQueryForINsert)
-            print("Value Added in Table")
+            return "Success"
         } catch {
-            //            print(error.localizedDescription)
-            self.CreateTable(ColoumArray: DataWantToSave.allKeys as NSArray, TableName: TableName)
-            self.AddColoum(Data: DataWantToSave, TableName: TableName)
-            
+            _ = self.CreateTable(ColoumArray: DataWantToSave.allKeys as NSArray, TableName: TableName)
+            self.AddColoum(Data: DataWantToSave, TableName: TableName, databaseName: DataBaseName)
+        }
+        
+        return "Failure"
+
+    }
+    
+    
+     func CreateTable(ColoumArray : NSArray,TableName : String) -> String{
+        
+        //Create Table if available already then get Value
+        let TableName = TableName
+        let usersTableForNow = Table(TableName)
+        let createTable = usersTableForNow.create { (table) in
+            for key in ColoumArray {
+                table.column(Expression<String>(key as! String))
+            }
+        }
+        do {
+            try Localdatabase.run(createTable)
+            return "Table Create"
+        } catch {
+            return "Table Already Exist"
         }
         
     }
 
-
     
-   public func AddColoum(Data : NSDictionary,TableName : String){
+     func AddColoum(Data : NSDictionary,TableName : String,databaseName : String){
         let TableName = TableName
         let usersTableForNow = Table(TableName)
         let ALLKEYS = Data.allKeys as NSArray
@@ -192,12 +258,16 @@ public class CodeHandelerMySqlite{
             }
         }
         //NewRow insert now add data
-        self.AddValueInSqlite(DataWantToSave: Data, TableName: TableName)
+        _ =  self.NowRunAddOperation(DataWantToSave: Data, TableName: TableName, DataBaseName: databaseName)
+        
         
     }
     
+
+
     
-   public func GetValueFromSqlite( TableName : String) -> NSArray{
+    
+    func NowRunGetValueOperation( TableName : String) -> NSArray{
         
         let TableNameGot : String = TableName
         var ColoumnArray:[String] = []
@@ -222,12 +292,6 @@ public class CodeHandelerMySqlite{
                     
                     if Value == nil{
                         MainRowGot.setValue("", forKey: name)
-                    }
-                    else if String( Value!).prefix(5) == "10000"{
-                        //this is string value
-                        Value = String(String( Value!).dropFirst(5))
-                        MainRowGot.setValue(Value, forKey: name)
-                        
                     }
                     else if String( Value!).prefix(5) == "20000"{
                         //this is Date value
@@ -350,6 +414,21 @@ public class CodeHandelerMySqlite{
         } catch {
             print(error)
             return []
+        }
+        
+    }
+    
+    func NowRunDeleteOperation(TableName : String) -> String{
+        
+        let usersTableForNow = Table(TableName)
+        let user = usersTableForNow
+        let deleteUser = user.delete()
+        do {
+            try Localdatabase.run(deleteUser)
+            return "Success"
+        } catch {
+            print(error)
+            return "Failure"
         }
         
     }

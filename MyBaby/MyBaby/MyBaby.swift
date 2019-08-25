@@ -20,7 +20,7 @@ public class MyBaby {
     public static let DateTime     =    CodeHandlerDateTime()
     public static let Loader       =    CodeHandlerLoader()
     public static let String       =    CodeHandlerString()
-    public static let MySqual      =    CodeHandelerMySqlite()
+    public static let MySqualDatabase      =    CodeHandelerMySqlite()
 
 
 
