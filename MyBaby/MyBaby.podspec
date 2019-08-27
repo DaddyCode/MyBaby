@@ -20,7 +20,7 @@ also we try to implement more helpful function in framework."
   spec.platform     = :ios, "10.0"
   spec.swift_version  = '4.0'
   spec.source       = { :git => "https://github.com/DaddyCode/MyBaby.git", :tag => "1.0.29" }
-  spec.source_files  = "MyBaby/**/*"
+  spec.source_files = 'MyBaby/MyBaby/*.{h,m}'
   spec.exclude_files = "MyBaby/MyBaby/*.plist"
   spec.ios.framework  = 'UIKit'
   spec.dependency 'Alamofire'
