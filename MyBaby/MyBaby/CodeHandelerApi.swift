@@ -70,7 +70,7 @@ public class CodeHandlerApi{
                         let sessionExpireJson = JSON as! NSDictionary
                         let GetAllApiData : NSMutableDictionary = NSMutableDictionary.init(dictionary: sessionExpireJson)
                         GetAllApiData.setValue(ApiName, forKey: "ApiName")
-                        Delegate?.ApiResponceSuccess(Success: GetAllApiData)
+                        Delegate?.ApiResponceFailure(Failure: GetAllApiData as NSDictionary)
                     }
                     else{
                         let JSON = ["message":"Due to some reason error occur please try again","ApiName":ApiName,"status":"002"]
@@ -133,7 +133,7 @@ public class CodeHandlerApi{
                         let sessionExpireJson = JSON as! NSDictionary
                         let GetAllApiData : NSMutableDictionary = NSMutableDictionary.init(dictionary: sessionExpireJson)
                         GetAllApiData.setValue(ApiName, forKey: "ApiName")
-                        Delegate?.ApiResponceSuccess(Success: GetAllApiData)
+                        Delegate?.ApiResponceFailure(Failure: GetAllApiData as NSDictionary)
                     }
                     else{
                         let JSON = ["message":"Due to some reason error occur please try again","ApiName":ApiName,"status":"002"]
