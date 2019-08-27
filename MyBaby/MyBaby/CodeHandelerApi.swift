@@ -50,32 +50,35 @@ public class CodeHandlerApi{
                 Delegate?.ApiResponceFailure(Failure: JSON as NSDictionary)
             }
             else{
-            if let JSON = response.result.value {
-                let sessionExpireJson = JSON as! NSDictionary
-                if(sessionExpireJson.allKeys.count == 1){
-                    //That's mean api result is not proper
-                    let JSON = ["message":"Json Data Error","status":"003","ApiName":ApiName]
-                    Delegate?.ApiResponceFailure(Failure: JSON as NSDictionary)
-                }
-                else{
-                    if sessionExpireJson["status"] as! String == "0"{
-                        //Api Failure
-                        let GetAllApiData : NSMutableDictionary = NSMutableDictionary.init(dictionary: sessionExpireJson)
-                        GetAllApiData.setValue(ApiName, forKey: "ApiName")
-                        Delegate?.ApiResponceFailure(Failure: GetAllApiData)
-                    }
-                    else{
+                
+                let statusCode = (response.response?.statusCode)! //example : 200
+                
+                if statusCode == 200{
+                    if let JSON = response.result.value {
+                        let sessionExpireJson = JSON as! NSDictionary
                         let GetAllApiData : NSMutableDictionary = NSMutableDictionary.init(dictionary: sessionExpireJson)
                         GetAllApiData.setValue(ApiName, forKey: "ApiName")
                         Delegate?.ApiResponceSuccess(Success: GetAllApiData)
                     }
-
+                    else{
+                        let JSON = ["message":"Due to some reason error occur please try again","ApiName":ApiName,"status":"002"]
+                        Delegate?.ApiResponceFailure(Failure: JSON as NSDictionary)
+                    }
                 }
-            }
-            else{
-                let JSON = ["message":"Due to some reason error occur please try again","ApiName":ApiName,"status":"002"]
-                Delegate?.ApiResponceFailure(Failure: JSON as NSDictionary)
-            }
+                else{
+                    if let JSON = response.result.value {
+                        let sessionExpireJson = JSON as! NSDictionary
+                        let GetAllApiData : NSMutableDictionary = NSMutableDictionary.init(dictionary: sessionExpireJson)
+                        GetAllApiData.setValue(ApiName, forKey: "ApiName")
+                        Delegate?.ApiResponceSuccess(Success: GetAllApiData)
+                    }
+                    else{
+                        let JSON = ["message":"Due to some reason error occur please try again","ApiName":ApiName,"status":"002"]
+                        Delegate?.ApiResponceFailure(Failure: JSON as NSDictionary)
+                    }
+                }
+                
+         
           }
         }
     }
@@ -110,33 +113,34 @@ public class CodeHandlerApi{
                 Delegate?.ApiResponceFailure(Failure: JSON as NSDictionary)
             }
             else{
-            
-            if let JSON = response.result.value {
-                let sessionExpireJson = JSON as! NSDictionary
-                if(sessionExpireJson.allKeys.count == 1){
-                    //That's mean api result is not proper
-                    let JSON = ["message":"Json Data Error","status":"003","ApiName":ApiName]
-                    Delegate?.ApiResponceFailure(Failure: JSON as NSDictionary)
-                }
-                else{
-                    if sessionExpireJson["status"] as! String == "0"{
-                        //Api Failure
-                        let GetAllApiData : NSMutableDictionary = NSMutableDictionary.init(dictionary: sessionExpireJson)
-                        GetAllApiData.setValue(ApiName, forKey: "ApiName")
-                        Delegate?.ApiResponceFailure(Failure: GetAllApiData)
-                    }
-                    else{
+                
+                let statusCode = (response.response?.statusCode)! //example : 200
+                
+                if statusCode == 200{
+                    if let JSON = response.result.value {
+                        let sessionExpireJson = JSON as! NSDictionary
                         let GetAllApiData : NSMutableDictionary = NSMutableDictionary.init(dictionary: sessionExpireJson)
                         GetAllApiData.setValue(ApiName, forKey: "ApiName")
                         Delegate?.ApiResponceSuccess(Success: GetAllApiData)
                     }
-
+                    else{
+                        let JSON = ["message":"Due to some reason error occur please try again","ApiName":ApiName,"status":"002"]
+                        Delegate?.ApiResponceFailure(Failure: JSON as NSDictionary)
+                    }
                 }
-            }
-            else{
-                let JSON = ["message":"Due to some reason error occur please try again","ApiName":ApiName,"status":"002"]
-                Delegate?.ApiResponceFailure(Failure: JSON as NSDictionary)
-            }
+                else{
+                    if let JSON = response.result.value {
+                        let sessionExpireJson = JSON as! NSDictionary
+                        let GetAllApiData : NSMutableDictionary = NSMutableDictionary.init(dictionary: sessionExpireJson)
+                        GetAllApiData.setValue(ApiName, forKey: "ApiName")
+                        Delegate?.ApiResponceSuccess(Success: GetAllApiData)
+                    }
+                    else{
+                        let JSON = ["message":"Due to some reason error occur please try again","ApiName":ApiName,"status":"002"]
+                        Delegate?.ApiResponceFailure(Failure: JSON as NSDictionary)
+                    }
+                }
+                
           }
         }
     }
