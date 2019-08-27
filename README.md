@@ -22,7 +22,7 @@ Requirement : -
 Installation : -
 CocoaPods is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate Alamofire into your Xcode project using CocoaPods, specify it in your PodFile:
 
-pod 'MyBaby',  '~> 1.0.32'
+pod 'MyBaby',  '~> 1.0.33'
 
 How To Use : -
 1. Import MyBaby
