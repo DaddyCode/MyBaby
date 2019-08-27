@@ -114,7 +114,7 @@ public class CodeHandlerApi{
             }
             else{
                 
-                let statusCode = (response.response?.statusCode)! //example : 200
+                let statusCode = (response.response?.statusCode) ?? 0 //example : 200
                 
                 if statusCode == 200{
                     if let JSON = response.result.value {
