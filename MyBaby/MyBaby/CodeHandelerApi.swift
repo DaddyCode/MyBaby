@@ -97,7 +97,7 @@ public class CodeHandlerApi{
         config.requestCachePolicy = .reloadIgnoringLocalAndRemoteCacheData
         config.urlCache = nil
 
-        Alamofire.request(url as String , method: .post, parameters: BodyParameter as? Parameters,headers:HeaderParameter).responseJSON { response in
+        Alamofire.request(url as String , method: .get, parameters: BodyParameter as? Parameters,headers:HeaderParameter).responseJSON { response in
 
             if Log == true{
                 print("API NAME :-  \(ApiName)")
