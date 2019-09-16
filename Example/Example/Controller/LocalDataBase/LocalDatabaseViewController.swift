@@ -38,7 +38,8 @@ class LocalDatabaseViewController: UIViewController {
         else{
         
      let tempDict = ["Name" : self.txtMessage.text!,"Message" : self.txtMessage.text!] as NSDictionary
-     let Status = MyBaby.MySqualDatabase.SaveValueInSqlite(DataBaseName: "NothingToWorry", TableName: "MyBaby", DataWantToSave: tempDict)
+   //  let Status = MyBaby.MySqualDatabase.SaveValueInSqlite(DataBaseName: "NothingToWorry", TableName: "123456", DataWantToSave: tempDict)
+            let Status = LD.SaveValueInSqlite(DataBaseName: "TryAgain", TableName: "dfhjg2456435dfg", DataWantToSave: tempDict)
         
      MyBaby.Alert.AlertAppear(Messaage: Status, Title: "", View: self, Button: false, SingleButton: false, FirstButtonText: "", SecondButtonText: "")
         self.txtMessage.text = ""
@@ -46,8 +47,11 @@ class LocalDatabaseViewController: UIViewController {
         }
     }
     @IBAction func GetValuefromDatabase(_ sender: Any) {
-      let Data = MyBaby.MySqualDatabase.GetValueFromSqlite(TableName: "MyBaby", DataBaseName: "NothingToWorry")
-        print(Data)
+//      let Data = MyBaby.MySqualDatabase.GetValueFromSqlite(TableName: "MyBaby", DataBaseName: "NothingToWorry")
+//        print(Data)
+        let getData = LD.GetValueFromSqlite(DataBaseName: "TryAgain", TableName: "123456")
+        print(getData)
+   
         
         MyBaby.Alert.AlertAppear(Messaage: "Data Fetch", Title: "", View: self, Button: false, SingleButton: false, FirstButtonText: "", SecondButtonText: "")
 

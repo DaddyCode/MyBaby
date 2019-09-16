@@ -10,9 +10,8 @@ import Foundation
 import SQLite
 
 
-
 public class CodeHandelerMySqlite{
-
+    
     var Localdatabase: Connection!
     
     
@@ -27,7 +26,7 @@ public class CodeHandelerMySqlite{
             let strDBPath   : String    = fileUrl.path
             if (manager.fileExists(atPath: strDBPath)) {
                 // it's here!!
-            let Status = self.NowRunAddOperation(DataWantToSave: DataWantToSave, TableName: TableName, DataBaseName: DataBaseName)
+                let Status = self.NowRunAddOperation(DataWantToSave: DataWantToSave, TableName: TableName, DataBaseName: DataBaseName)
                 return Status
             }else{
                 print("File Not Exist so try again")
@@ -36,7 +35,7 @@ public class CodeHandelerMySqlite{
         } catch {
             print(error)
             return "Failure"
-
+            
         }
         
         
@@ -46,14 +45,14 @@ public class CodeHandelerMySqlite{
         do {
             let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
             let fileUrl = documentDirectory.appendingPathComponent(DataBaseName).appendingPathExtension("sqlite3")
-
+            
             
             let manager = FileManager.default
             let strDBPath   : String    = fileUrl.path
             if (manager.fileExists(atPath: strDBPath)) {
                 // it's here!!
                 Localdatabase = try Connection(fileUrl.path)
-             let Status =  self.NowRunDeleteOperation(TableName: TableName)
+                let Status =  self.NowRunDeleteOperation(TableName: TableName)
                 return Status
             }else{
                 print("File Not Exist so try again")
@@ -62,13 +61,13 @@ public class CodeHandelerMySqlite{
         } catch {
             print(error)
             return "Failure"
-
+            
         }
         
         
     }
     
-    public func GetValueFromSqlite( TableName : String,DataBaseName : String) -> NSArray{
+    public func GetValueFromSqlite(DataBaseName : String, TableName : String) -> NSArray{
         do {
             let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
             let fileUrl = documentDirectory.appendingPathComponent(DataBaseName).appendingPathExtension("sqlite3")
@@ -93,7 +92,7 @@ public class CodeHandelerMySqlite{
     }
     
     
-    func NowRunAddOperation(DataWantToSave : NSDictionary, TableName : String,DataBaseName : String) -> String{
+    private func NowRunAddOperation(DataWantToSave : NSDictionary, TableName : String,DataBaseName : String) -> String{
         
         let TableName : String = TableName
         
@@ -144,7 +143,6 @@ public class CodeHandelerMySqlite{
                 let formatterTen = DateFormatter()
                 formatterTen.dateFormat = "HH:mm:ss.SSS"
                 
-
                 
                 if formatterFirst.string(from: ValueIsDate) != nil{
                     Value = "20000" + formatterFirst.string(from: ValueIsDate)
@@ -211,21 +209,36 @@ public class CodeHandelerMySqlite{
         }
         KeyStringCreate = String(KeyStringCreate.dropLast()) + ")"
         ValueStringCcreate = String(ValueStringCcreate.dropLast()) + ");"
-        let FinalQueryForINsert = "INSERT INTO " + TableName + " " + KeyStringCreate + " VALUES " + ValueStringCcreate
+        let FinalQueryForINsert = "INSERT INTO " + "'" + TableName + "'" + " " + KeyStringCreate + " VALUES " + ValueStringCcreate
         do {
             try Localdatabase.run(FinalQueryForINsert)
             return "Success"
         } catch {
-            _ = self.CreateTable(ColoumArray: DataWantToSave.allKeys as NSArray, TableName: TableName)
-            self.AddColoum(Data: DataWantToSave, TableName: TableName, databaseName: DataBaseName)
+            print(error)
+            let TableStatur = self.CreateTable(ColoumArray: DataWantToSave.allKeys as NSArray, TableName: TableName)
+            if TableStatur == "Table Already Exist"{
+                self.AddColoum(Data: DataWantToSave, TableName: TableName, databaseName: DataBaseName)
+            }
+            
+            let AgainAddStatus =  self.AdValueCodeAgain(Query: FinalQueryForINsert)
+            return AgainAddStatus
         }
         
-        return "Failure"
-
+        
+    }
+    
+    private func AdValueCodeAgain(Query : String) -> String {
+        do {
+            try Localdatabase.run(Query)
+            return "Success"
+        } catch {
+            print(error)
+            return error.localizedDescription
+        }
     }
     
     
-     func CreateTable(ColoumArray : NSArray,TableName : String) -> String{
+    private func CreateTable(ColoumArray : NSArray,TableName : String) -> String{
         
         //Create Table if available already then get Value
         let TableName = TableName
@@ -243,9 +256,9 @@ public class CodeHandelerMySqlite{
         }
         
     }
-
     
-     func AddColoum(Data : NSDictionary,TableName : String,databaseName : String){
+    
+    private func AddColoum(Data : NSDictionary,TableName : String,databaseName : String){
         let TableName = TableName
         let usersTableForNow = Table(TableName)
         let ALLKEYS = Data.allKeys as NSArray
@@ -263,11 +276,11 @@ public class CodeHandelerMySqlite{
         
     }
     
-
-
     
     
-    func NowRunGetValueOperation( TableName : String) -> NSArray{
+    
+    
+    private func NowRunGetValueOperation( TableName : String) -> NSArray{
         
         let TableNameGot : String = TableName
         var ColoumnArray:[String] = []
@@ -418,7 +431,7 @@ public class CodeHandelerMySqlite{
         
     }
     
-    func NowRunDeleteOperation(TableName : String) -> String{
+    private func NowRunDeleteOperation(TableName : String) -> String{
         
         let usersTableForNow = Table(TableName)
         let user = usersTableForNow
@@ -433,5 +446,6 @@ public class CodeHandelerMySqlite{
         
     }
     
-////////////////////////
+    ////////////////////////
 }
+
