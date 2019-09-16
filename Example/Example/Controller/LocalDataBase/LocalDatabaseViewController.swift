@@ -8,13 +8,15 @@
 
 import UIKit
 import MyBaby
+import SQLite
 
 class LocalDatabaseViewController: UIViewController {
 
     
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtMessage: UITextField!
-    
+    var Localdatabase: Connection!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +40,7 @@ class LocalDatabaseViewController: UIViewController {
         else{
         
      let tempDict = ["Name" : self.txtMessage.text!,"Message" : self.txtMessage.text!] as NSDictionary
-   //  let Status = MyBaby.MySqualDatabase.SaveValueInSqlite(DataBaseName: "NothingToWorry", TableName: "123456", DataWantToSave: tempDict)
-            let Status = LD.SaveValueInSqlite(DataBaseName: "TryAgain", TableName: "dfhjg2456435dfg", DataWantToSave: tempDict)
+     let Status = MyBaby.MySqualDatabase.SaveValueInSqlite(DataBaseName: "NothingToWorry", TableName: "5d7b462d7a17c257866b3325", DataWantToSave: tempDict)
         
      MyBaby.Alert.AlertAppear(Messaage: Status, Title: "", View: self, Button: false, SingleButton: false, FirstButtonText: "", SecondButtonText: "")
         self.txtMessage.text = ""
@@ -47,16 +48,17 @@ class LocalDatabaseViewController: UIViewController {
         }
     }
     @IBAction func GetValuefromDatabase(_ sender: Any) {
-//      let Data = MyBaby.MySqualDatabase.GetValueFromSqlite(TableName: "MyBaby", DataBaseName: "NothingToWorry")
-//        print(Data)
-        let getData = LD.GetValueFromSqlite(DataBaseName: "TryAgain", TableName: "123456")
-        print(getData)
-   
+        let Data = MyBaby.MySqualDatabase.GetValueFromSqlite(DataBaseName: "NothingToWorry", TableName: "5d7b462d7a17c257866b3325")
+        print(Data)
+  
         
         MyBaby.Alert.AlertAppear(Messaage: "Data Fetch", Title: "", View: self, Button: false, SingleButton: false, FirstButtonText: "", SecondButtonText: "")
 
         
     }
+    
+
+    
     
     @IBAction func deletetableFromSqlite(_ sender: Any) {
         

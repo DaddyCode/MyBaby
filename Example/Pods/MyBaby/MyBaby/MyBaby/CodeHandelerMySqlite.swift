@@ -64,27 +64,6 @@ public class CodeHandelerMySqlite{
             
         }
         
-    }
-   public func DeleteCompleteDatabase(databaseName : String) -> String{
-        do {
-            let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-            let fileUrl = documentDirectory.appendingPathComponent(databaseName).appendingPathExtension("sqlite3")
-            Localdatabase = try Connection(fileUrl.path)
-            let manager = FileManager.default
-            let strDBPath   : String    = fileUrl.path
-            if (manager.fileExists(atPath: strDBPath)) {
-                do {
-                    try FileManager.default.removeItem(at: fileUrl)
-                    return "Success"
-                } catch let error as NSError {
-                    return error.localizedDescription
-                }
-            }else{
-                return "Failure"
-            }
-        } catch {
-            return "Failure"
-        }
         
     }
     
@@ -306,7 +285,7 @@ public class CodeHandelerMySqlite{
         let TableNameGot : String = TableName
         var ColoumnArray:[String] = []
         do {
-            let s = try Localdatabase!.prepare("PRAGMA table_info('" + TableNameGot + "')" )
+            let s = try Localdatabase!.prepare("PRAGMA table_info(" + TableNameGot + ")" )
             for row in s { ColoumnArray.append(row[1]! as! String) }
         }
         catch { print("some woe in findColumns for \(TableNameGot) \(error)") }
@@ -466,8 +445,6 @@ public class CodeHandelerMySqlite{
         }
         
     }
-    
-    
     
     ////////////////////////
 }
