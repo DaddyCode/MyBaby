@@ -41,7 +41,8 @@ class LocalDatabaseViewController: UIViewController {
         
      let tempDict = ["Name" : self.txtMessage.text!,"Message" : self.txtMessage.text!] as NSDictionary
      let Status = MyBaby.MySqualDatabase.SaveValueInSqlite(DataBaseName: "NothingToWorry", TableName: "5d7b462d7a17c257866b3325", DataWantToSave: tempDict)
-        
+
+
      MyBaby.Alert.AlertAppear(Messaage: Status, Title: "", View: self, Button: false, SingleButton: false, FirstButtonText: "", SecondButtonText: "")
         self.txtMessage.text = ""
         self.txtName.text = ""

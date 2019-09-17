@@ -9,7 +9,6 @@
 import Foundation
 import SQLite
 
-
 public class CodeHandelerMySqlite{
     
     var Localdatabase: Connection!
@@ -65,7 +64,7 @@ public class CodeHandelerMySqlite{
         }
         
     }
-   public func DeleteCompleteDatabase(databaseName : String) -> String{
+    public func DeleteCompleteDatabase(databaseName : String) -> String{
         do {
             let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
             let fileUrl = documentDirectory.appendingPathComponent(databaseName).appendingPathExtension("sqlite3")
@@ -115,8 +114,34 @@ public class CodeHandelerMySqlite{
     
     private func NowRunAddOperation(DataWantToSave : NSDictionary, TableName : String,DataBaseName : String) -> String{
         
-        let TableName : String = TableName
         
+        let ColoumName = self.GotAllColumOfTable(TableName: TableName)
+        let CreateNewDataToSave : NSMutableDictionary = NSMutableDictionary.init(dictionary: DataWantToSave)
+        for item in ColoumName{
+            if CreateNewDataToSave[item] != nil {}else{
+                //Add key
+                CreateNewDataToSave.setValue("", forKey: item)
+            }
+        }
+        let FinalQueryForINsert = self.CreateQueryToDataSave(Input: CreateNewDataToSave, TableName: TableName)
+        
+        do {
+            try Localdatabase.run(FinalQueryForINsert)
+            return "Success"
+        } catch {
+            print(error)
+            let TableStatur = self.CreateTable(ColoumArray: DataWantToSave.allKeys as NSArray, TableName: TableName)
+            if TableStatur == "Table Already Exist"{
+                self.AddColoum(Data: DataWantToSave, TableName: TableName, databaseName: DataBaseName)
+            }
+            let AgainAddStatus =  self.AdValueCodeAgain(Query: FinalQueryForINsert)
+            return AgainAddStatus
+        }
+        
+        
+    }
+    private func CreateQueryToDataSave(Input : NSDictionary,TableName : String) -> String{
+        let DataWantToSave = Input
         var KeyStringCreate = "("
         var ValueStringCcreate = "("
         for Key in DataWantToSave.allKeys{
@@ -231,21 +256,7 @@ public class CodeHandelerMySqlite{
         KeyStringCreate = String(KeyStringCreate.dropLast()) + ")"
         ValueStringCcreate = String(ValueStringCcreate.dropLast()) + ");"
         let FinalQueryForINsert = "INSERT INTO " + "'" + TableName + "'" + " " + KeyStringCreate + " VALUES " + ValueStringCcreate
-        do {
-            try Localdatabase.run(FinalQueryForINsert)
-            return "Success"
-        } catch {
-            print(error)
-            let TableStatur = self.CreateTable(ColoumArray: DataWantToSave.allKeys as NSArray, TableName: TableName)
-            if TableStatur == "Table Already Exist"{
-                self.AddColoum(Data: DataWantToSave, TableName: TableName, databaseName: DataBaseName)
-            }
-            
-            let AgainAddStatus =  self.AdValueCodeAgain(Query: FinalQueryForINsert)
-            return AgainAddStatus
-        }
-        
-        
+        return FinalQueryForINsert
     }
     
     private func AdValueCodeAgain(Query : String) -> String {
@@ -291,18 +302,11 @@ public class CodeHandelerMySqlite{
                 print(error)
             }
         }
-        //NewRow insert now add data
-        _ =  self.NowRunAddOperation(DataWantToSave: Data, TableName: TableName, DataBaseName: databaseName)
-        
-        
     }
     
     
     
-    
-    
-    private func NowRunGetValueOperation( TableName : String) -> NSArray{
-        
+    private func GotAllColumOfTable(TableName : String) -> [String]{
         let TableNameGot : String = TableName
         var ColoumnArray:[String] = []
         do {
@@ -310,7 +314,13 @@ public class CodeHandelerMySqlite{
             for row in s { ColoumnArray.append(row[1]! as! String) }
         }
         catch { print("some woe in findColumns for \(TableNameGot) \(error)") }
+        return ColoumnArray
+    }
+    
+    private func NowRunGetValueOperation( TableName : String) -> NSArray{
         
+        let TableNameGot : String = TableName
+        let ColoumnArray:[String] = self.GotAllColumOfTable(TableName: TableName)
         do {
             let usersTableForNow = Table(TableNameGot)
             let users = try Localdatabase.prepare(usersTableForNow)
@@ -471,4 +481,6 @@ public class CodeHandelerMySqlite{
     
     ////////////////////////
 }
+
+
 
