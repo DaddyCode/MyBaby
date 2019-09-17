@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4DDFF8F4D535F7D701B13EFD /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE1D342294B1D0AD2810B34D /* Pods_Example.framework */; };
+		65862EAA233103490014EDE0 /* DateAndTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65862EA9233103490014EDE0 /* DateAndTime.swift */; };
+		65862EAC233106C20014EDE0 /* HandelClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65862EAB233106C20014EDE0 /* HandelClass.swift */; };
 		65B9DB7122E02C610086388A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B9DB7022E02C610086388A /* AppDelegate.swift */; };
 		65B9DB7322E02C610086388A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B9DB7222E02C610086388A /* ViewController.swift */; };
 		65B9DB7622E02C610086388A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65B9DB7422E02C610086388A /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		65862EA9233103490014EDE0 /* DateAndTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAndTime.swift; sourceTree = "<group>"; };
+		65862EAB233106C20014EDE0 /* HandelClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandelClass.swift; sourceTree = "<group>"; };
 		65B9DB6D22E02C610086388A /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65B9DB7022E02C610086388A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65B9DB7222E02C610086388A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +50,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65862EA82331032F0014EDE0 /* DateAndTime */ = {
+			isa = PBXGroup;
+			children = (
+				65862EA9233103490014EDE0 /* DateAndTime.swift */,
+				65862EAB233106C20014EDE0 /* HandelClass.swift */,
+			);
+			path = DateAndTime;
+			sourceTree = "<group>";
+		};
 		65B9DB6422E02C610086388A = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +102,7 @@
 		D4A510FF23127ECD000CCBF6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				65862EA82331032F0014EDE0 /* DateAndTime */,
 				D4A511062312827E000CCBF6 /* LocalDataBase */,
 				D4A5110023127F0F000CCBF6 /* ViewController */,
 			);
@@ -245,6 +259,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65862EAC233106C20014EDE0 /* HandelClass.swift in Sources */,
+				65862EAA233103490014EDE0 /* DateAndTime.swift in Sources */,
 				65B9DB7322E02C610086388A /* ViewController.swift in Sources */,
 				D4A5110823128293000CCBF6 /* LocalDatabaseViewController.swift in Sources */,
 				65B9DB7122E02C610086388A /* AppDelegate.swift in Sources */,

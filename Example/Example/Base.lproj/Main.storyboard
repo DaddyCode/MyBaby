@@ -90,6 +90,108 @@
             </objects>
             <point key="canvasLocation" x="76.811594202898561" y="23.4375"/>
         </scene>
+        <!--Date And Time-->
+        <scene sceneID="SnA-cJ-Yo8">
+            <objects>
+                <viewController storyboardIdentifier="DateAndTime" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qdp-2x-4tQ" customClass="DateAndTime" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6ja-cX-0HP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mY9-dC-Ru9">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date &amp; Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p9d-0Z-yoe">
+                                        <rect key="frame" x="145" y="53" width="124.5" height="27"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bn7-Ig-Oxm">
+                                        <rect key="frame" x="20" y="51.5" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="2ef-ct-Evm"/>
+                                            <constraint firstAttribute="width" constant="30" id="yCh-O8-dAm"/>
+                                        </constraints>
+                                        <state key="normal" image="left"/>
+                                        <connections>
+                                            <action selector="btnBack:" destination="qdp-2x-4tQ" eventType="touchUpInside" id="0Fr-FQ-iUg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.080693493150000004" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Fdd-uf-2kf"/>
+                                    <constraint firstItem="p9d-0Z-yoe" firstAttribute="centerX" secondItem="mY9-dC-Ru9" secondAttribute="centerX" id="apW-CN-Gs7"/>
+                                    <constraint firstItem="Bn7-Ig-Oxm" firstAttribute="leading" secondItem="mY9-dC-Ru9" secondAttribute="leading" constant="20" id="luj-T7-YZ5"/>
+                                    <constraint firstItem="Bn7-Ig-Oxm" firstAttribute="centerY" secondItem="p9d-0Z-yoe" secondAttribute="centerY" id="qJh-TR-3KC"/>
+                                    <constraint firstAttribute="bottom" secondItem="p9d-0Z-yoe" secondAttribute="bottom" constant="20" id="rna-o6-AN6"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Heq-Qk-pHV">
+                                <rect key="frame" x="155" y="127" width="104" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Get local Time"/>
+                                <connections>
+                                    <action selector="getLocalTime:" destination="qdp-2x-4tQ" eventType="touchUpInside" id="dfE-hj-OLL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VL3-S8-alo">
+                                <rect key="frame" x="141" y="185" width="132" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Get UC Time Zone"/>
+                                <connections>
+                                    <action selector="getUcTime:" destination="qdp-2x-4tQ" eventType="touchUpInside" id="sPl-hp-UDY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhf-z8-Aev">
+                                <rect key="frame" x="148.5" y="247" width="117" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Get Time Stamp"/>
+                                <connections>
+                                    <action selector="getTimeStamp:" destination="qdp-2x-4tQ" eventType="touchUpInside" id="5hH-w4-9In"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m7D-Ij-8WY">
+                                <rect key="frame" x="96" y="305" width="222" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Time Stamp convert local time"/>
+                                <connections>
+                                    <action selector="timeStampConvertIntoLocalTime:" destination="qdp-2x-4tQ" eventType="touchUpInside" id="v55-M3-Qp3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFL-EK-MkF">
+                                <rect key="frame" x="102.5" y="357" width="209" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Time Stamp convert UC time"/>
+                                <connections>
+                                    <action selector="timeStampConvertIntoUcTIme:" destination="qdp-2x-4tQ" eventType="touchUpInside" id="KQy-Jh-sjN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="m7D-Ij-8WY" firstAttribute="top" secondItem="qhf-z8-Aev" secondAttribute="bottom" constant="28" id="2zX-Tm-vZa"/>
+                            <constraint firstItem="mY9-dC-Ru9" firstAttribute="leading" secondItem="4Ky-yF-JJL" secondAttribute="leading" id="3Ma-WZ-LVY"/>
+                            <constraint firstItem="VL3-S8-alo" firstAttribute="centerX" secondItem="6ja-cX-0HP" secondAttribute="centerX" id="IbC-aD-cJ1"/>
+                            <constraint firstItem="m7D-Ij-8WY" firstAttribute="centerX" secondItem="6ja-cX-0HP" secondAttribute="centerX" id="Nul-5p-VjW"/>
+                            <constraint firstItem="qhf-z8-Aev" firstAttribute="centerX" secondItem="6ja-cX-0HP" secondAttribute="centerX" id="TIc-fz-FjI"/>
+                            <constraint firstItem="Heq-Qk-pHV" firstAttribute="top" secondItem="mY9-dC-Ru9" secondAttribute="bottom" constant="27" id="Yak-5T-rDM"/>
+                            <constraint firstItem="VL3-S8-alo" firstAttribute="top" secondItem="Heq-Qk-pHV" secondAttribute="bottom" constant="28" id="akD-D4-kjT"/>
+                            <constraint firstItem="mY9-dC-Ru9" firstAttribute="trailing" secondItem="4Ky-yF-JJL" secondAttribute="trailing" id="cD7-GN-TmL"/>
+                            <constraint firstItem="Heq-Qk-pHV" firstAttribute="centerX" secondItem="6ja-cX-0HP" secondAttribute="centerX" id="exP-RQ-9uG"/>
+                            <constraint firstItem="wFL-EK-MkF" firstAttribute="centerX" secondItem="6ja-cX-0HP" secondAttribute="centerX" id="lDa-nJ-6Op"/>
+                            <constraint firstItem="qhf-z8-Aev" firstAttribute="top" secondItem="VL3-S8-alo" secondAttribute="bottom" constant="32" id="ohi-Re-NYY"/>
+                            <constraint firstItem="wFL-EK-MkF" firstAttribute="top" secondItem="m7D-Ij-8WY" secondAttribute="bottom" constant="22" id="ryQ-Xn-D0z"/>
+                            <constraint firstItem="mY9-dC-Ru9" firstAttribute="top" secondItem="6ja-cX-0HP" secondAttribute="top" id="xdX-Km-GSF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4Ky-yF-JJL"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5gi-KS-Npx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="887" y="50"/>
+        </scene>
         <!--Local Database View Controller-->
         <scene sceneID="cNE-wU-bkE">
             <objects>

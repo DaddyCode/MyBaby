@@ -51,6 +51,10 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             let InstanceCreate = self.storyboard?.instantiateViewController(withIdentifier: "LocalDatabaseViewController") as! LocalDatabaseViewController
             self.present(InstanceCreate, animated: true, completion: nil)
         }
+        else if indexPath.row == 4{
+            let InstanceCreate = self.storyboard?.instantiateViewController(withIdentifier: "DateAndTime") as! DateAndTime
+            self.present(InstanceCreate, animated: true, completion: nil)
+        }
         
     }
 

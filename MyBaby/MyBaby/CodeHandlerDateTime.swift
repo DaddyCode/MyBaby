@@ -64,4 +64,26 @@ public class CodeHandlerDateTime{
         return DateChange
     }
     
+   public func LocalTimeZoneGet() -> String{
+        let dtf = DateFormatter()
+        dtf.timeZone = TimeZone.current
+        dtf.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        return dtf.string(from: Date())
+    }
+    
+   public func TimeStampGet(InputDate : Date) -> Double{
+        let currentTimeStamp  =  InputDate.timeIntervalSince1970
+        return currentTimeStamp
+    }
+    
+   public func TimeStampConvertInToLocalTimeZone(InputTimeStamp : Double) -> String{
+        
+        let date = Date(timeIntervalSince1970: Double(InputTimeStamp))
+        let dateFormatt = DateFormatter();
+        dateFormatt.dateFormat = "yyyy-MM-dd HH:mm:ssZ"
+        dateFormatt.timeZone = NSTimeZone.local
+        let CurrentTimeFromTimeStamp = dateFormatt.string(from: date as Date)
+        return CurrentTimeFromTimeStamp
+    }
+    
 }
