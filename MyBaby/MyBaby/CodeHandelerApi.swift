@@ -97,7 +97,7 @@ public class CodeHandlerApi{
         config.urlCache = nil
         var  jsonData = NSData()
         do {
-            jsonData = try JSONSerialization.data(withJSONObject: Body, options: .prettyPrinted) as NSData
+            jsonData = try JSONSerialization.data(withJSONObject: BodyParameter, options: .prettyPrinted) as NSData
         } catch {
             print(error.localizedDescription)
         }
