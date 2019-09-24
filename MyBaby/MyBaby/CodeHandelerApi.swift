@@ -84,26 +84,28 @@ public class CodeHandlerApi{
     }
     
     
-    public func ApiHitUsingPostMethodRawDataFormat( APiUrl: NSString,HeaderParameter : [String: String] , BodyParameter: NSDictionary,ApiName : String,Log : Bool,Controller : UIViewController) {
+    public func ApiHitWithRawDataFormat(ApiMethod : String, APiUrl: NSString,HeaderParameter : [String: String] , BodyParameter: NSDictionary,ApiName : String,Log : Bool,Controller : UIViewController) {
         
         let Delegate : ApiResponceDelegateMB? = Controller as? ApiResponceDelegateMB
-        var url = APiUrl
-        url = url.replacingOccurrences(of: " ", with: "%20") as NSString
-        URLCache.shared.removeAllCachedResponses()
         
-        //Create a non-caching configuration.
-        let config = URLSessionConfiguration.default
-        config.requestCachePolicy = .reloadIgnoringLocalAndRemoteCacheData
-        config.urlCache = nil
+
         var  jsonData = NSData()
         do {
             jsonData = try JSONSerialization.data(withJSONObject: BodyParameter, options: .prettyPrinted) as NSData
         } catch {
             print(error.localizedDescription)
         }
+        let urlString = APiUrl
+        guard let url = URL(string: urlString as String) else {return}
+        var request = URLRequest(url: url)
+        request.httpMethod = ApiMethod
+        let HeaderDict : NSMutableDictionary = NSMutableDictionary.init(dictionary: HeaderParameter)
+        for item in HeaderDict.allKeys {
+            request.setValue(HeaderDict[item] as? String, forHTTPHeaderField: item as! String)
+        }
+        request.httpBody = jsonData as Data
+        Alamofire.request(request).responseJSON{ (response) in
         
-        Alamofire.request(url as String , method: .post, parameters: jsonData as? Parameters,headers:HeaderParameter).responseJSON { response in
-            
             if Log == true{
                 print("API NAME :-  \(ApiName)")
                 print("API URL :-  \(APiUrl)")
